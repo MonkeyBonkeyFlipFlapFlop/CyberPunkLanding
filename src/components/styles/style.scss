@@ -1,16 +1,20 @@
+@font-face {
+    font-family: "Archangelsk";
+    src: url(/src/components/fonts/Archangelsk.ttf) format('truetype');
+}
+
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
-
-@import "../button/button";
-
-@import "../promo-header/promo-header";
-@import "../night-city/night-city";
-@import "../raffle-console/raffle-console";
-@import "../advertisement-HP/advertisement-HP";
-@import "../buy-section/buy-section";
-@import "../footer/footer";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import '../button/button',
+        '../promo-header/promo-header',
+        '../night-city/night-city',
+        '../raffle-console/raffle-console',
+        '../advertisement-HP/advertisement-HP',
+        '../buy-section/buy-section',
+        '../footer/footer'
 
 
