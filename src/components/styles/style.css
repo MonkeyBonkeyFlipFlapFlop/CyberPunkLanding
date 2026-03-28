@@ -1,0 +1,12 @@
+@import "../button/button.css";
+@import "../promo-header/promo-header.css";
+@import "../night-city/night-city.css";
+@import "../raffle-console/raffle-console.css";
+@import "../advertisement-HP/advertisement-HP.css";
+@import "../buy-section/buy-section.css";
+@import "../footer/footer.css";
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}

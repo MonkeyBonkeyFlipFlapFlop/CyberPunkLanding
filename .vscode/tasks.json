@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sass Watch",
+            "type": "shell",
+            // Теперь команда простая, без путей к папкам
+            "command": "sass --watch style.scss style.css",
+            "options": {
+                // Это заставляет терминал сначала "зайти" в нужную папку
+                "cwd": "${workspaceFolder}/src/components/styles"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$node-sass"
+        }
+    ]
+}
