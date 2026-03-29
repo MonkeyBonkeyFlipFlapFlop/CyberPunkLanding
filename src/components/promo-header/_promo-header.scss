@@ -1,122 +1,87 @@
+@use '../common/variables' as *;
+@use '../common/mixin' as *;
+
 .promo-header {
-  background-image: url(/src/components/img/background/backgorund_1.png);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+  background: url('../img/background/background_1.png') no-repeat center / cover;
+  @include size(100vw, 100%, 100vh);
+  @include flex-box(flex, center, stretch, row);
   padding-top: 1.25rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 
-
-  &__container{
-  max-width: 80rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
-}
-
-&__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  width: 100%;
-}
-
-&__menu {
-  max-width: 23.75rem;
-  width: 100%;
-}
-
-&__list {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
+  &__container {
+    @include size(80rem);
+    @include flex-box(flex, space-between, flex-end, column);
   }
 
-    &__link{
-        &:hover{
-            .promo-header__icon{
-                transform: translateY(-10px);
-                cursor: pointer;
-            }
-        }
-    }
-    
-    &__icon{
-        transition: transform 0.5s;
-    }
-
-    &__logo:hover{
-    cursor: pointer;
-}
-
- &__block{
-    max-width: 39rem;
+  &__content {
+    @include flex-box(flex, space-between, center, row);
+    padding: 0 2rem;
     width: 100%;
-    height: 23.0625rem;
-    background-color: yellow;
-    clip-path: polygon(8% 0%, 70% 0%, 100% 0%, 100% 86%, 92% 100%, 30% 100%, 0% 100%, 0% 16%);
-    margin: 0 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    }
+  }
 
-    &__title{
-        max-width: 30.25rem;
-        width: 100%;
-        font-family: "Archangelsk";
-        font-size: 3.875rem;
-        color: black;
-    }
+  &__menu {
+    max-width: 23.75rem;
+    width: 100%;
+  }
 
-    &__button{
-        width: 17rem;
-        height: 4.875rem;
-        margin-top: 1.5625rem;
-        transition: border 0.15s, font-size 0.4s;
-        font-size: 1.5rem;
-    &:hover{
+  &__list {
+    list-style: none;
+    @include flex-box(flex, space-between, stretch, row)
+  }
+
+  &__link {
+    text-decoration: none; 
+
+    &:hover {
+      .promo-header__icon {
+        transform: translateY(-10px);
         cursor: pointer;
-        border: 3px solid blue;
-        font-size: 1.75rem;
+      }
     }
+  }
+
+  &__icon {
+    transition: transform 0.5s ease;
+  }
+
+  &__logo {
+    &:hover {
+      cursor: pointer;
     }
+  }
+
+  &__block {
+    @include size(39rem);
+    height: 23.0625rem;
+    background-color: $color-accent;
+    clip-path: $border-polygon;
+    margin: 0 2rem;
+    @include flex-box (flex, center, center, column)
+  }
+
+  &__title {
+    @include size(30.25rem);
+    @include main-text();
+    line-height: 1.1;
+  }
+
+  &__button {
+    width: 17rem;
+    height: 4.875rem;
+    margin-top: 1.5625rem;
+    font-weight: bold;
+    background-color: $color-main;
+    color: $color-accent;
+    border: none;
+    transition: all 0.3s ease;
+    @include text($size: 1.5rem, $color: $color-accent);
+
+    &:hover {
+      cursor: pointer;
+      border: 3px solid $color-border;
+      font-size: 1.75rem;
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 45rem){
     .promo-header{
@@ -129,8 +94,7 @@
         }
 
         &__block{
-            max-width: 20rem;
-            width: 100%;
+            @include size(20rem);
             height: 13rem;
         }
 
@@ -140,19 +104,12 @@
         }
 
         &__inner{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+           @include flex-box(flex, null, center, column)
         }
 
         &__button{
-            max-width: 15.25rem;
-            width: 100%;
+            @include size(15.25rem);
             height: 3.75rem;
         }
     }
 }
-
-
-
-

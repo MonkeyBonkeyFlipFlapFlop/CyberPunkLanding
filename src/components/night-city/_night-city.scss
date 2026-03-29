@@ -1,0 +1,38 @@
+@use '../common/variables' as *;
+@use '../common/mixin' as *;
+
+
+.night-city{
+
+    @include flex-box(flex, center, center);
+    
+
+    &__container{
+        @include size(80rem);
+        margin-top: 4.375rem;
+    }
+
+    &__text{
+        @include size(62.5rem)
+    }
+
+    &__title{
+        @include main-text()
+    }
+
+    &__description{
+        @include text($color: #777777);
+        margin-top: 1.5rem;;
+    }
+
+    &__gallery{
+        margin-top: 4.375rem;
+        @include flex-box(flex, space-between, center, row);
+        height: 26.5rem
+    }
+
+    &__small-img{
+        @include flex-box(flex, space-between, stretch, column);
+        height: 100%;
+    }
+}

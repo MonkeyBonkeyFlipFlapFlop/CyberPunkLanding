@@ -1,0 +1,24 @@
+@mixin main-text($family: "Archangelsk", $size: 3.875rem, $color: black){ 
+    font-family: $family, sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin text($family: "Roboto", $size: 1.125rem, $color: white){ 
+    font-family: $family, sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin flex-box ($display: flex, $justify-content: null,$align-items: null,$flex-direction: row){ 
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin size($max-width, $width: 100%, $height: auto){
+    max-width: $max-width;
+    width: $width;
+    height: $height;
+}

@@ -1,20 +1,25 @@
+@use "../common/variables" as *;
+@use "../common/mixin" as *;
+
+@use "../promo-header/promo-header" as *;
+@use "../night-city/night-city" as *;
+@use "../raffle-console/raffle-console" as *;
+@use "../advertisement-HP/advertisement-HP" as *;
+@use "../buy-section/buy-section" as *;
+@use "../footer/footer" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 @font-face {
-    font-family: "Archangelsk";
-    src: url(/src/components/fonts/Archangelsk.ttf) format('truetype');
+  font-family: "Archangelsk";
+  src: url("../fonts/Archangelsk.ttf") format("truetype");
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import '../button/button',
-        '../promo-header/promo-header',
-        '../night-city/night-city',
-        '../raffle-console/raffle-console',
-        '../advertisement-HP/advertisement-HP',
-        '../buy-section/buy-section',
-        '../footer/footer'
-
 
