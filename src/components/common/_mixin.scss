@@ -10,6 +10,18 @@
     color: $color;
 }
 
+@mixin text-light($family: "Roboto-light", $size: 1.125rem, $color: white){ 
+    font-family: $family, sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin text-bold($family: "Roboto-bold", $size: 1.125rem, $color: white){ 
+    font-family: $family, sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
 @mixin flex-box ($display: flex, $justify-content: null,$align-items: null,$flex-direction: row){ 
     display: $display;
     justify-content: $justify-content;

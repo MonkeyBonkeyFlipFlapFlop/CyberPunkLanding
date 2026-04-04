@@ -1,0 +1,10 @@
+@use "../mixin" as *;
+@use "../variables" as *;
+
+button{
+    width: 192px;
+    height: 60px;
+    background-color: $color-main;
+    color: $color-accent;
+    @include text()
+}

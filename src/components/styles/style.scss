@@ -1,6 +1,7 @@
 @use "../common/variables" as *;
 @use "../common/mixin" as *;
 
+@use '../common/common' as *;
 @use "../promo-header/promo-header" as *;
 @use "../night-city/night-city" as *;
 @use "../raffle-console/raffle-console" as *;
@@ -8,11 +9,26 @@
 @use "../buy-section/buy-section" as *;
 @use "../footer/footer" as *;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@use "../common/button/button" as *;
+
+@font-face {
+  font-family: "Roboto" ;
+  src: url(../fonts/Roboto.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-light" ;
+  src: url(../fonts/Roboto-Light.ttf) format("truetype");
+}
 
 @font-face {
   font-family: "Archangelsk";
   src: url("../fonts/Archangelsk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-bold" ;
+  src: url(../fonts/Roboto-Bold.ttf) format("truetype");
 }
 
 *,

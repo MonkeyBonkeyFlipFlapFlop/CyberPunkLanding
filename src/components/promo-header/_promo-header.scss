@@ -1,8 +1,9 @@
-@use '../common/variables' as *;
-@use '../common/mixin' as *;
+@use "../common/variables" as *;
+@use "../common/mixin" as *;
+@use "../common/button/button" as *;
 
 .promo-header {
-  background: url('../img/background/background_1.png') no-repeat center / cover;
+  background: url("../img/background/background_1.png") no-repeat center / cover;
   @include size(100vw, 100%, 100vh);
   @include flex-box(flex, center, stretch, row);
   padding-top: 1.25rem;
@@ -25,11 +26,11 @@
 
   &__list {
     list-style: none;
-    @include flex-box(flex, space-between, stretch, row)
+    @include flex-box(flex, space-between, stretch, row);
   }
 
   &__link {
-    text-decoration: none; 
+    text-decoration: none;
 
     &:hover {
       .promo-header__icon {
@@ -53,9 +54,9 @@
     @include size(39rem);
     height: 23.0625rem;
     background-color: $color-accent;
-    clip-path: $border-polygon;
+    clip-path: polygon(8% 0%, 100% 0%, 100% 86%, 92% 100%, 0% 100%, 0% 16%);
     margin: 0 2rem;
-    @include flex-box (flex, center, center, column)
+    @include flex-box(flex, center, center, column);
   }
 
   &__title {
@@ -81,35 +82,33 @@
       font-size: 1.75rem;
     }
   }
+  &__inner {
+    @include flex-box(flex, center, null, column);
+  }
 }
 
-@media (max-width: 45rem){
-    .promo-header{
-        &__content{
-            flex-direction: column;
-        }       
-
-        &__container{
-            align-items: center;
-        }
-
-        &__block{
-            @include size(20rem);
-            height: 13rem;
-        }
-
-        &__title{
-            font-size: 1.875rem;
-            text-align: center;
-        }
-
-        &__inner{
-           @include flex-box(flex, null, center, column)
-        }
-
-        &__button{
-            @include size(15.25rem);
-            height: 3.75rem;
-        }
+@media (max-width: 45rem) {
+  .promo-header {
+    &__content {
+      flex-direction: column;
     }
+
+    &__container {
+      align-items: center;
+    }
+
+    &__block {
+      @include size(20rem);
+      height: 13rem;
+    }
+
+    &__title {
+      font-size: 1.875rem;
+      text-align: center;
+    } 
+    
+    &__inner {
+      @include flex-box($align-items: center, $flex-direction: column);
+    }
+  }
 }

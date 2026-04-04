@@ -1,38 +1,111 @@
-@use '../common/variables' as *;
-@use '../common/mixin' as *;
+@use "../common/variables" as *;
+@use "../common/mixin" as *;
 
 
-.night-city{
+h1,h2,h3,h4,h5,h6{
+  all: unset;
+}
 
-    @include flex-box(flex, center, center);
-    
+.night-city {
+  @include flex-box(flex, center, center);
+  background-color: $color-light;
 
-    &__container{
-        @include size(80rem);
-        margin-top: 4.375rem;
+  &__container {
+    @include size(80rem);
+    margin-top: 4.375rem;
+    padding: 0 2rem;
+  }
+
+  &__text {
+    @include size(62.5rem);
+    @include flex-box(flex, $flex-direction: column)
+  }
+
+  &__title {
+    @include main-text();
+  }
+
+  &__description {
+    @include text($color: #777777);
+    margin-top: 1.5rem;
+  }
+
+  &__gallery {
+    margin-top: 4.375rem;
+    @include flex-box(flex, space-between, center, row);
+    max-height: 26.5rem;
+    height: 100%;
+    gap: 2vw;
+    margin-bottom: 5.1325rem;
+  }
+
+  &__small-img {
+    @include flex-box(flex, space-between, stretch, column);
+    gap: 2vw;
+
+    &_item {
+      max-width: 100%;
+    }
+  }
+
+  &__large-img {
+    &_item {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 64rem) {
+  .night-city {
+    &__gallery {
+      @include flex-box(flex, space-between, center, column);
+      @include size($max-width: 100%);
+      max-height: none;
+      gap: 2vw;
     }
 
-    &__text{
-        @include size(62.5rem)
+    &__small-img {
+      @include flex-box($flex-direction: row);
+      @include size($max-width: 100%);
+
+      &_item {
+        @include size($max-width: 28.5rem, $height: auto);
+        overflow: hidden;
+      }
     }
 
-    &__title{
-        @include main-text()
+    &__large-img {
+      @include size($max-width: 100%);
+      &_item {
+        @include size($max-width: 59.5rem, $height: auto);
+      }
+    }
+  }
+}
+
+@media (max-width: 45rem) {
+  .night-city {
+    &__gallery {
+      max-height: none;
+      height: auto;
     }
 
-    &__description{
-        @include text($color: #777777);
-        margin-top: 1.5rem;;
+    &__small-img {
+      @include flex-box($align-items: center, $flex-direction: column);
     }
 
-    &__gallery{
-        margin-top: 4.375rem;
-        @include flex-box(flex, space-between, center, row);
-        height: 26.5rem
-    }
+    &__large-img {
+      max-width: 28.5rem;
+      height: 26.5rem;
+      overflow: hidden; 
 
-    &__small-img{
-        @include flex-box(flex, space-between, stretch, column);
+      &_item { 
+        width: 100%;
         height: 100%;
+        object-fit: cover;
+        object-position: center;
+       clip-path: polygon(16% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%, 0% 15%);
+      }
     }
+  }
 }

@@ -1,0 +1,108 @@
+@use "../common/mixin" as *;
+@use "../common/variables" as *;
+@use "../common/common" as *;
+@use "../common/button/button" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  all: unset;
+}
+
+.black-white {
+  background-image: url(../img/background/black-white.jpg);
+}
+
+.raffle-console {
+  background-color: $color-main;
+  @include flex-box(flex, center);
+  padding-top: 1rem;
+
+  &__container {
+    @include size(80rem);
+  }
+
+  &__title {
+    @include main-text($color: $color-light);
+    padding: 2rem 0 0 2rem;
+  }
+
+  &__header {
+    @include flex-box(flex, flex-start, center);
+  }
+
+  &__description {
+    @include size(59.5rem);
+    @include text($color: $color-light);
+    margin-top: 1.5625rem;
+  }
+
+
+  &__block {
+    margin-top: 1.5625rem;
+  }
+
+  &__form {
+    @include size(28.75rem);
+    @include flex-box(flex, $flex-direction: column);
+    gap: 2.1875rem;
+  }
+
+  &__field {
+    height: 2.1875rem;
+    width: 100%;
+    background-color: $color-main;
+    border: none;
+    border-bottom: 1px solid $color-other;
+    @include text($color: $color-light);
+
+    &::placeholder {
+      padding-bottom: 0.8125rem;
+      @include text-light($color: $color-light);
+      font-weight: lighter;
+    }
+  }
+
+  &__file {
+    @include size(25rem, $height: 7.5rem);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  &__label-file {
+    @include flex-box(flex, center, center, column);
+    @include size(28.75rem, $height: 7.5rem);
+    border: 1px dashed $color-other;
+    background-color: $color-main;
+    color: $color-light;
+    @include text-light();
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__label-title{
+    text-decoration: underline;
+  }
+
+  &__label-subtitle{
+    font-size: 0.75rem;
+    margin-top: 0.4375rem;
+  }
+
+  &__button{
+    background-color: $color-accent;
+    @include text-bold($color: $color-main)
+  }
+}

@@ -1,0 +1,19 @@
+@use "../common/mixin" as *;
+@use "../common/variables" as *;
+
+.transition-background {
+  @include size(100vw, 100%, 4.375rem);
+}
+
+.dedicated {
+  & a {
+    transition: color 0.3s;
+    text-decoration: none;
+    @include text-bold($color: $color-dedicated);
+
+    &:hover {
+      cursor: pointer;
+      color: #275eb1;
+    }
+  }
+}
