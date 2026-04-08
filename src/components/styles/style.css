@@ -287,18 +287,19 @@ h6 {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding-top: 1rem;
+  padding-top: 16px;
 }
 .raffle-console__container {
   max-width: 80rem;
   width: 100%;
   height: auto;
+  padding-left: 36px;
 }
 .raffle-console__title {
   font-family: "Archangelsk", sans-serif;
   font-size: 3.875rem;
   color: #FFFFFF;
-  padding: 2rem 0 0 2rem;
+  padding: 32px 0 0 32px;
 }
 .raffle-console__header {
   display: flex;
@@ -313,16 +314,20 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-size: 1.125rem;
   color: #FFFFFF;
-  margin-top: 1.5625rem;
+  margin-top: 25px;
 }
 .raffle-console__block {
-  margin-top: 1.5625rem;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .raffle-console__form {
   max-width: 28.75rem;
   width: 100%;
   height: auto;
   display: flex;
+  justify-content: flex-end;
   flex-direction: column;
   gap: 2.1875rem;
 }
@@ -335,20 +340,29 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-size: 1.125rem;
   color: #FFFFFF;
+  transition: outline 0.3s ease, border-bottom;
+  outline: none;
+  box-sizing: border-box;
 }
 .raffle-console__field::-moz-placeholder {
-  padding-bottom: 0.8125rem;
+  padding-bottom: 13px;
   font-family: "Roboto-light", sans-serif;
   font-size: 1.125rem;
   color: #FFFFFF;
   font-weight: lighter;
+  padding-left: 10px;
 }
 .raffle-console__field::placeholder {
-  padding-bottom: 0.8125rem;
+  padding-bottom: 13px;
   font-family: "Roboto-light", sans-serif;
   font-size: 1.125rem;
   color: #FFFFFF;
   font-weight: lighter;
+  padding-left: 10px;
+}
+.raffle-console__field:focus {
+  outline: 3px solid #F8F200;
+  border-bottom: none;
 }
 .raffle-console__file {
   max-width: 25rem;
@@ -379,22 +393,217 @@ h6 {
   font-family: "Roboto-light", sans-serif;
   font-size: 1.125rem;
   color: white;
+  cursor: pointer;
+  transition: border 0.3s;
 }
 .raffle-console__label-file:hover {
-  cursor: pointer;
+  border: 2px solid #F8F200;
+}
+.raffle-console__label-file:hover .raffle-console__label-title {
+  font-size: 1.25rem;
+}
+.raffle-console__label-file:hover .raffle-console__label-subtitle {
+  font-size: 0.9rem;
 }
 .raffle-console__label-title {
   text-decoration: underline;
+  transition: font-size 0.3s;
 }
 .raffle-console__label-subtitle {
   font-size: 0.75rem;
-  margin-top: 0.4375rem;
+  margin-top: 7px;
+  transition: font-size 0.3s;
 }
 .raffle-console__button {
   background-color: #F8F200;
   font-family: "Roboto-bold", sans-serif;
   font-size: 1.125rem;
   color: #000000;
+  transition: font-size 0.3s, border 0.2s;
+}
+.raffle-console__button:hover {
+  cursor: pointer;
+  font-size: 1.25rem;
+  border: 3px solid #1a1aeb;
+}
+.raffle-console__gallery {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  position: relative;
+  margin-left: 32px;
+}
+.raffle-console__PS5 {
+  position: relative;
+  width: 60%;
+  margin-left: -20%;
+  z-index: 1;
+}
+.raffle-console__PS5 img {
+  width: 100%;
+  height: auto;
+}
+.raffle-console__XBOX {
+  width: 65%;
+  position: relative;
+  z-index: 2;
+}
+.raffle-console__XBOX img {
+  width: 100%;
+  height: auto;
+}
+.raffle-console__checked {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: -20px;
+}
+.raffle-console__checkbox {
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+.raffle-console__checkbox:checked + .raffle-console__agreement::after {
+  opacity: 1;
+}
+.raffle-console__agreement {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  font-family: "Roboto-light", sans-serif;
+  font-size: 0.75rem;
+  color: white;
+}
+.raffle-console__agreement::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 0.875rem;
+  width: 100%;
+  height: 0.875rem;
+  background: #000000;
+  border: 1px solid #777777;
+}
+.raffle-console__agreement::after {
+  content: "";
+  position: absolute;
+  left: 0.3125rem;
+  top: 50%;
+  transform: translateY(-65%) rotate(45deg);
+  max-width: 0.25rem;
+  width: 100%;
+  height: 0.5rem;
+  border: solid #F8F200;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  transition: 0.1s;
+}
+@media (max-width: 64rem) {
+  .raffle-console .raffle-console__header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .raffle-console .raffle-console__container {
+    padding-inline: 36px;
+  }
+  .raffle-console .raffle-console__description {
+    max-width: 45vw;
+    width: 100%;
+    height: auto;
+    line-height: 1.5;
+  }
+  .raffle-console .raffle-console__title {
+    padding: 15px 0 0 0;
+    max-width: 28.75rem;
+    width: 100%;
+    height: auto;
+  }
+  .raffle-console .raffle-console__gallery {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 20vh;
+    height: 0;
+    z-index: 0;
+  }
+  .raffle-console .raffle-console__XBOX {
+    position: relative;
+    max-width: 40vw;
+    width: 100%;
+    height: auto;
+  }
+  .raffle-console .raffle-console__PS5 {
+    margin-left: 0;
+    max-width: 40vw;
+    width: 100%;
+    height: auto;
+  }
+  .raffle-console .raffle-console__block {
+    margin-top: 10%;
+  }
+  .raffle-console .raffle-console__form {
+    max-width: 45vw;
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 45rem) {
+  .raffle-console .raffle-console__block {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .raffle-console .raffle-console__XBOX {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+  }
+  .raffle-console .raffle-console__PS5 {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+  }
+  .raffle-console .raffle-console__gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+  .raffle-console .raffle-console__form {
+    max-width: revert;
+    width: 90%;
+    height: auto;
+    align-items: center;
+  }
+  .raffle-console .raffle-console__label-file {
+    max-width: revert;
+    width: 100%;
+    height: 120px;
+  }
+  .raffle-console .raffle-console__description {
+    max-width: revert;
+    width: 100%;
+    height: auto;
+  }
+  .raffle-console .raffle-console__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .raffle-console .raffle-console__title {
+    font-size: 1.875rem;
+    padding-left: 15px;
+  }
 }
 
 @font-face {

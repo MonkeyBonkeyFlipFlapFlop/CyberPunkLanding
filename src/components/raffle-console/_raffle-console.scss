@@ -19,15 +19,16 @@ h6 {
 .raffle-console {
   background-color: $color-main;
   @include flex-box(flex, center);
-  padding-top: 1rem;
+  padding-top: 16px;
 
   &__container {
     @include size(80rem);
+    padding-left: 36px;
   }
 
   &__title {
     @include main-text($color: $color-light);
-    padding: 2rem 0 0 2rem;
+    padding: 32px 0 0 32px;
   }
 
   &__header {
@@ -37,17 +38,18 @@ h6 {
   &__description {
     @include size(59.5rem);
     @include text($color: $color-light);
-    margin-top: 1.5625rem;
+    margin-top: 25px;
   }
 
-
   &__block {
-    margin-top: 1.5625rem;
+    margin-top: 25px;
+    @include flex-box(flex);
+    width: 100%;
   }
 
   &__form {
     @include size(28.75rem);
-    @include flex-box(flex, $flex-direction: column);
+    @include flex-box(flex, $justify-content: flex-end, $flex-direction: column);
     gap: 2.1875rem;
   }
 
@@ -58,11 +60,20 @@ h6 {
     border: none;
     border-bottom: 1px solid $color-other;
     @include text($color: $color-light);
+    transition: outline 0.3s ease, border-bottom;
+    outline: none;
+    box-sizing: border-box;
 
     &::placeholder {
-      padding-bottom: 0.8125rem;
+      padding-bottom: 13px;
       @include text-light($color: $color-light);
       font-weight: lighter;
+      padding-left: 10px;
+    }
+
+    &:focus{
+      outline: 3px solid $color-accent;
+      border-bottom: none;
     }
   }
 
@@ -87,22 +98,210 @@ h6 {
     background-color: $color-main;
     color: $color-light;
     @include text-light();
-    &:hover {
-      cursor: pointer;
+    cursor: pointer;
+    transition: border 0.3s ;
+    &:hover{
+      border: 2px solid $color-accent;
+
+      .raffle-console__label-title {
+         font-size: 1.25rem;
+      }
+
+     .raffle-console__label-subtitle{
+        font-size: 0.9rem;
+      }
     }
   }
 
-  &__label-title{
+  &__label-title {
     text-decoration: underline;
+    transition: font-size 0.3s;
   }
 
-  &__label-subtitle{
+  &__label-subtitle {
     font-size: 0.75rem;
-    margin-top: 0.4375rem;
+    margin-top: 7px;
+    transition: font-size 0.3s;
   }
 
-  &__button{
+  &__button {
     background-color: $color-accent;
-    @include text-bold($color: $color-main)
+    @include text-bold($color: $color-main);
+    transition: font-size 0.3s, border 0.2s;
+    &:hover{
+      cursor: pointer;
+      font-size: 1.25rem;
+      border: 3px solid $color-border;
+    }
+  }
+
+  &__gallery {
+    @include flex-box (flex, $align-items: center);
+    width: 50%;
+    position: relative;
+    margin-left: 32px;
+  }
+
+  &__PS5 {
+    position: relative;
+    width: 60%;
+    margin-left: -20%;
+    z-index: 1;
+
+    & img {
+      width: 100%;
+      height: auto
+    }
+  }
+
+  &__XBOX {
+    width: 65%;
+    position: relative;
+    z-index: 2;
+
+    & img {
+      width: 100%;
+      height: auto
+    }
+  }
+
+  &__checked {
+    @include flex-box($align-items: center);
+    margin-top: -20px;
+  }
+
+  &__checkbox {
+    position: absolute;
+    clip: rect(0 0 0 0);
+
+    &:checked+.raffle-console__agreement::after {
+      opacity: 1;
+    }
+  }
+
+  &__agreement {
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+    @include text-light($size: 0.75rem);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      @include size(0.875rem, $height: 0.875rem);
+      background: $color-main;
+      border: 1px solid $color-other;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.3125rem;
+      top: 50%;
+      transform: translateY(-65%) rotate(45deg);
+      @include size(0.25rem, $height: 0.5rem);
+      border: solid $color-accent;
+      border-width: 0 2px 2px 0;
+      opacity: 0;
+      transition: 0.1s;
+    }
+  }
+
+  @media (max-width: 64rem) {
+    .raffle-console {
+      &__header {
+        @include flex-box(flex, $align-items: flex-start, $flex-direction: column)
+      }
+
+      &__container {
+        padding-inline: 36px
+      }
+
+      &__description {
+        @include size(45vw);
+        line-height: 1.5;
+      }
+
+      &__title {
+        padding: 15px 0 0 0;
+        @include size(28.75rem);
+      }
+
+      &__gallery {
+        @include flex-box($align-items: center, $flex-direction: column);
+        position: absolute;
+        right: 0;
+        top: 20vh;
+        height: 0;
+        z-index: 0;
+      }
+
+      &__XBOX {
+        position: relative;
+        @include size(40vw)
+      }
+
+      &__PS5 {
+        margin-left: 0;
+        @include size(40vw)
+      }
+
+      &__block {
+        margin-top: 10%;
+      }
+
+      &__form {
+        @include size(45vw)
+      }
+    }
+  }
+
+  @media (max-width: 45rem) {
+    .raffle-console {
+      &__block {
+        @include flex-box($align-items: center, $flex-direction: column-reverse)
+      }
+
+       &__XBOX {
+        @include size(200px)
+      }
+
+      &__PS5 {
+        @include size(200px)
+      }
+
+      &__gallery {
+        @include flex-box($justify-content:space-around, $align-items: center, $flex-direction: row);
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+      }
+
+      &__form{
+        @include size(revert, 90%);
+        align-items: center;
+      }
+
+      &__label-file{
+        @include size(revert, 100%, 120px)
+      }
+
+      &__description {
+        @include size(revert)
+      }
+
+      &__header{
+        @include flex-box($justify-content: space-between, $align-items:center, $flex-direction: row)
+      }
+
+      &__title{
+        font-size: 1.875rem;
+        padding-left: 15px;
+      }
+    }
   }
 }

@@ -13,7 +13,7 @@
     <section class="raffle-console">
       <div class="raffle-console__container">
         <div class="raffle-console__header">
-          <div class="raffle-console__logo"><img src="./img/logo/logo_raffle.jpg" alt="" class="raffle-console__item"></div>
+          <div class="raffle-console__logo"><img src="./img/logo/logo_raffle.jpg" alt="Лого"></div>
           <div class="raffle-console__title">Играй и выигрывай!</div>
         </div>
         <div class="raffle-console__description">Играй в <span class="raffle-console__text dedicated"><a href="https://www.cyberpunk.net/ru/ru/" target="_blank" class="raffle-console__link">Cyberpunk 2077</a></span> и получи возможность выиграть консоль <span class="raffle-console__text dedicated"><a href="https://www.xbox.com/ru-RU/consoles/xbox-series-x" target="_blank" class="raffle-console__link">Xbox Series X</a></span> или Sony <span class="raffle-console__text dedicated"><a href="https://www.playstation.com/ru-ua/ps5/" target="_blank" class="raffle-console__link">Sony PlayStation 5!</a></span> Заполни форму ниже и приложи скриншот о покупке игры. Итоги розыгрыша будут подведены 1 февраля. Удачи! ;)</div>
@@ -27,8 +27,19 @@
                 </label>
                 <input type="file" id="file" class="raffle-console__file" accept=".png, .jpg, .pdf">
                 <button class="raffle-console__button">Отправить</button>
+                <div class="raffle-console__checked">
+                  <input type="checkbox" id="agreement" class="raffle-console__checkbox">
+                  <label class="raffle-console__agreement" for="agreement">Согласен на обработку персональных данных</label>
+                </div>
             </form>
-            
+            <div class="raffle-console__gallery">
+                <div class="raffle-console__XBOX">
+                  <img src="../components/img/gallery/Xbox_SeriesX.jpg" alt="">
+                </div>
+                <div class="raffle-console__PS5">
+                  <img src="../components/img/gallery/PS5.jpg">
+                </div>
+            </div>
         </div>
     </div>
     </section>
