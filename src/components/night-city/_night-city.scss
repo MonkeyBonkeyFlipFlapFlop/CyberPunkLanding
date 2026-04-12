@@ -12,8 +12,8 @@ h1,h2,h3,h4,h5,h6{
 
   &__container {
     @include size(80rem);
-    margin-top: 4.375rem;
-    padding: 0 2rem;
+    margin-top: 70px;
+    padding: 0 32px;
   }
 
   &__text {
@@ -27,22 +27,19 @@ h1,h2,h3,h4,h5,h6{
 
   &__description {
     @include text($color: #777777);
-    margin-top: 1.5rem;
+    margin-top: 24px;
   }
-
+ 
   &__gallery {
-    margin-top: 4.375rem;
-    @include flex-box(flex, space-between, center, row);
+    margin-top: 70px;
+    @include flex-box(flex, space-between, center, row, 2vw);
     max-height: 26.5rem;
     height: 100%;
-    gap: 2vw;
-    margin-bottom: 5.1325rem;
+    margin-bottom: 80px;
   }
 
   &__small-img {
-    @include flex-box(flex, space-between, stretch, column);
-    gap: 2vw;
-
+    @include flex-box(flex, space-between, stretch, column, 2vw);
     &_item {
       max-width: 100%;
     }
@@ -58,14 +55,13 @@ h1,h2,h3,h4,h5,h6{
 @media (max-width: 64rem) {
   .night-city {
     &__gallery {
-      @include flex-box(flex, space-between, center, column);
+      @include flex-box(flex, space-between, center, column, 2vw);
       @include size($max-width: 100%);
       max-height: none;
-      gap: 2vw;
     }
 
     &__small-img {
-      @include flex-box($flex-direction: row);
+      @include flex-box($flex-direction: row, $gap:2vw);
       @include size($max-width: 100%);
 
       &_item {
@@ -91,7 +87,7 @@ h1,h2,h3,h4,h5,h6{
     }
 
     &__small-img {
-      @include flex-box($align-items: center, $flex-direction: column);
+      @include flex-box($align-items: center, $flex-direction: column, $gap:2vw);
     }
 
     &__large-img {

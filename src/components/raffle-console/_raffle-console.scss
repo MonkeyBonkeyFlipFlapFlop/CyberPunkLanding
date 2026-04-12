@@ -20,6 +20,7 @@ h6 {
   background-color: $color-main;
   @include flex-box(flex, center);
   padding-top: 16px;
+  padding-bottom: 70px;
 
   &__container {
     @include size(80rem);
@@ -49,7 +50,9 @@ h6 {
 
   &__form {
     @include size(28.75rem);
-    @include flex-box(flex, $justify-content: flex-end, $flex-direction: column);
+    @include flex-box(flex,
+      $justify-content: flex-end,
+      $flex-direction: column);
     gap: 2.1875rem;
   }
 
@@ -59,19 +62,20 @@ h6 {
     background-color: $color-main;
     border: none;
     border-bottom: 1px solid $color-other;
-    @include text($color: $color-light);
-    transition: outline 0.3s ease, border-bottom;
+    @include text($color: $color-light, $weight: 100);
+    transition:
+      outline 0.3s ease,
+      border-bottom;
     outline: none;
     box-sizing: border-box;
 
     &::placeholder {
       padding-bottom: 13px;
-      @include text-light($color: $color-light);
-      font-weight: lighter;
+      @include text($color: $color-light, $weight: 100);
       padding-left: 10px;
     }
 
-    &:focus{
+    &:focus {
       outline: 3px solid $color-accent;
       border-bottom: none;
     }
@@ -97,17 +101,18 @@ h6 {
     border: 1px dashed $color-other;
     background-color: $color-main;
     color: $color-light;
-    @include text-light();
+    @include text($weight: 100);
     cursor: pointer;
-    transition: border 0.3s ;
-    &:hover{
+    transition: border 0.3s;
+
+    &:hover {
       border: 2px solid $color-accent;
 
       .raffle-console__label-title {
-         font-size: 1.25rem;
+        font-size: 1.25rem;
       }
 
-     .raffle-console__label-subtitle{
+      .raffle-console__label-subtitle {
         font-size: 0.9rem;
       }
     }
@@ -126,9 +131,12 @@ h6 {
 
   &__button {
     background-color: $color-accent;
-    @include text-bold($color: $color-main);
-    transition: font-size 0.3s, border 0.2s;
-    &:hover{
+    @include text($color: $color-main, $weight: 900);
+    transition:
+      font-size 0.3s,
+      border 0.2s;
+
+    &:hover {
       cursor: pointer;
       font-size: 1.25rem;
       border: 3px solid $color-border;
@@ -136,7 +144,7 @@ h6 {
   }
 
   &__gallery {
-    @include flex-box (flex, $align-items: center);
+    @include flex-box(flex, $align-items: center);
     width: 50%;
     position: relative;
     margin-left: 32px;
@@ -147,10 +155,15 @@ h6 {
     width: 60%;
     margin-left: -20%;
     z-index: 1;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     & img {
       width: 100%;
-      height: auto
+      height: auto;
     }
   }
 
@@ -158,10 +171,15 @@ h6 {
     width: 65%;
     position: relative;
     z-index: 2;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     & img {
       width: 100%;
-      height: auto
+      height: auto;
     }
   }
 
@@ -183,7 +201,7 @@ h6 {
     position: relative;
     padding-left: 24px;
     cursor: pointer;
-    @include text-light($size: 0.75rem);
+    @include text($size: 0.75rem, $weight: 100);
 
     &::before {
       content: "";
@@ -213,11 +231,13 @@ h6 {
   @media (max-width: 64rem) {
     .raffle-console {
       &__header {
-        @include flex-box(flex, $align-items: flex-start, $flex-direction: column)
+        @include flex-box(flex,
+          $align-items: flex-start,
+          $flex-direction: column);
       }
 
       &__container {
-        padding-inline: 36px
+        padding-inline: 36px;
       }
 
       &__description {
@@ -232,21 +252,20 @@ h6 {
 
       &__gallery {
         @include flex-box($align-items: center, $flex-direction: column);
-        position: absolute;
         right: 0;
-        top: 20vh;
         height: 0;
         z-index: 0;
+        margin-top: -50%;
       }
 
       &__XBOX {
         position: relative;
-        @include size(40vw)
+        @include size(40vw);
       }
 
       &__PS5 {
         margin-left: 0;
-        @include size(40vw)
+        @include size(40vw);
       }
 
       &__block {
@@ -254,7 +273,7 @@ h6 {
       }
 
       &__form {
-        @include size(45vw)
+        @include size(45vw);
       }
     }
   }
@@ -262,43 +281,49 @@ h6 {
   @media (max-width: 45rem) {
     .raffle-console {
       &__block {
-        @include flex-box($align-items: center, $flex-direction: column-reverse)
+        @include flex-box($align-items: center,
+          $flex-direction: column-reverse);
       }
 
-       &__XBOX {
-        @include size(200px)
+      &__XBOX {
+        @include size(200px);
       }
 
       &__PS5 {
-        @include size(200px)
+        @include size(200px);
       }
 
       &__gallery {
-        @include flex-box($justify-content:space-around, $align-items: center, $flex-direction: row);
+        @include flex-box($justify-content: space-around,
+          $align-items: center,
+          $flex-direction: row);
         width: 100%;
         position: relative;
         top: 0;
         height: auto;
+        margin-top: unset;
       }
 
-      &__form{
+      &__form {
         @include size(revert, 90%);
         align-items: center;
       }
 
-      &__label-file{
-        @include size(revert, 100%, 120px)
+      &__label-file {
+        @include size(revert, 100%, 120px);
       }
 
       &__description {
-        @include size(revert)
+        @include size(revert);
       }
 
-      &__header{
-        @include flex-box($justify-content: space-between, $align-items:center, $flex-direction: row)
+      &__header {
+        @include flex-box($justify-content: space-between,
+          $align-items: center,
+          $flex-direction: row);
       }
 
-      &__title{
+      &__title {
         font-size: 1.875rem;
         padding-left: 15px;
       }

@@ -1,0 +1,88 @@
+@use "../common/variables" as *;
+@use "../common/mixin" as *;
+
+.footer {
+  width: 100vw;
+  @include flex-box(flex, $align-items: center, $flex-direction: column);
+}
+
+.footer-copyright {
+  @include text($size: 0.75rem);
+  background-color: $color-main;
+  height: 2.5rem;
+  @include flex-box(flex, center, center);
+  width: 100vw;
+}
+
+.footer-container {
+  @include size(80rem);
+  @include flex-box(flex, space-between, center);
+  padding-block: 13px;
+  padding-inline: 20px;
+
+  &__logo {
+    @include flex-box(flex, $gap: 32px);
+    @include size(31.25rem);
+  }
+
+  &__info {
+    @include flex-box(flex, $gap: 32px);
+    @include text($color: $color-main);
+    @include size(24.25rem);
+  }
+
+  &__text {
+    transition: color 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      color: $color-dedicated;
+    }
+  }
+  &__img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 64rem) {
+  .footer-container {
+    &__info {
+      @include flex-box(
+        $align-items: center,
+        $flex-direction: column,
+        $gap: 10px
+      );
+    }
+    &__logo {
+      @include flex-box($justify-content: center);
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 45rem) {
+  .footer-container {
+    flex-direction: column;
+    padding: 0;
+
+    &__logo {
+      flex-direction: column;
+      width: auto;
+      margin-block: 40px 25px;
+      padding-inline: 10px;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    &__info{
+        background-color: #E6E6E6;
+        justify-content: center;;
+        @include size(unset,  $height: 6.25rem)
+    }
+  }
+}

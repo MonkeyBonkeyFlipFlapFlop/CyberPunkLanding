@@ -9,7 +9,7 @@
   & a {
     transition: color 0.3s;
     text-decoration: none;
-    @include text-bold($color: $color-dedicated);
+    @include text($color: $color-dedicated, $weight:900);
 
     &:hover {
       cursor: pointer;

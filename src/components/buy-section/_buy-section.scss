@@ -1,0 +1,143 @@
+@use "../common/mixin" as *;
+@use "../common/variables" as *;
+
+h2 {
+  all: unset;
+}
+
+.buy-section {
+  @include flex-box(flex);
+  height: auto;
+
+  &__background {
+    width: 50vw;
+    background-image: url(/src/components/img/background/buy_background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__container {
+    background-color: $color-main;
+    width: 52vw;
+    padding-bottom: 70px;
+  }
+
+  &__inclusion,
+  &__choice {
+    @include text($size: 1.5rem, $weight: 900, $color: #52bedc);
+  }
+
+  &__block {
+    @include flex-box(flex, $flex-direction: column);
+    padding: 70px 0 0 32px;
+    @include size(39rem);
+  }
+
+  &__title {
+    @include main-text($color: $color-light);
+  }
+
+  &__icons {
+    width: 2rem;
+    height: auto;
+  }
+
+  &__complects {
+    margin-top: 25px;
+  }
+
+  &__list {
+    list-style: none;
+    @include flex-box(flex, $flex-direction: column);
+    gap: 15px;
+    margin-top: 15px;
+    @include text($color: $color-light);
+  }
+
+  &__item {
+    @include flex-box(flex, $align-items: center);
+    gap: 10px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__crossplatforms {
+    margin-top: 70px;
+    @include size(20rem, $height: 12rem);
+    @include flex-box(flex, $flex-direction: column);
+  }
+
+  &__table {
+    margin-top: 25px;
+    height: 8.75rem;
+    @include flex-box(flex, space-between, $flex-direction: column);
+  }
+
+  &__cell {
+    @include flex-box(flex, space-between, center);
+  }
+    
+  &__platform{
+    transition: transform 0.3s ease;
+    &:hover{
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 45rem) {
+  .buy-section {
+    @include flex-box($flex-direction: column);
+
+    &__background {
+      height: 12.5rem;
+      width: 100%;
+      order: -1;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &__container {
+      width: 100%;
+      padding-bottom: 120px;
+      padding-inline: 20px;
+    }
+
+    &__block{
+        align-items: center;
+    }
+
+    &__title {
+      font-size: 1.875rem;
+    }
+
+    &__inclusion,
+    &__choice {
+      font-size: 1.25rem;
+      text-align: center;
+      display: block;
+    }
+
+    &__item {
+      font-size: 1rem;
+    }
+
+    &__cell {
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 20px;
+
+      &:first-child {
+        padding-top: 0px;
+      }
+    }
+
+    &__table {
+      height: auto;
+    }
+  }
+}

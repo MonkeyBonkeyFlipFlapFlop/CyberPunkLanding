@@ -1,36 +1,27 @@
-@mixin main-text($family: "Archangelsk", $size: 3.875rem, $color: black){ 
+@mixin main-text($family: "Archangelsk", $size: 3.875rem, $color: black, $weight: 400){ 
     font-family: $family, sans-serif;
     font-size: $size;
     color: $color;
+    font-weight: $weight; 
 }
 
-@mixin text($family: "Roboto", $size: 1.125rem, $color: white){ 
+@mixin text($size: 1.125rem, $weight: 400, $color: white, $family: "Roboto") {
     font-family: $family, sans-serif;
     font-size: $size;
+    font-weight: $weight; 
     color: $color;
 }
 
-@mixin text-light($family: "Roboto-light", $size: 1.125rem, $color: white){ 
-    font-family: $family, sans-serif;
-    font-size: $size;
-    color: $color;
-}
-
-@mixin text-bold($family: "Roboto-bold", $size: 1.125rem, $color: white){ 
-    font-family: $family, sans-serif;
-    font-size: $size;
-    color: $color;
-}
-
-@mixin flex-box ($display: flex, $justify-content: null,$align-items: null,$flex-direction: row){ 
+@mixin flex-box ($display: flex, $justify-content: null,$align-items: null,$flex-direction: row, $gap: 0){ 
     display: $display;
     justify-content: $justify-content;
     align-items: $align-items;
     flex-direction: $flex-direction;
+    gap: $gap;
 }
 
 @mixin size($max-width, $width: 100%, $height: auto){
     max-width: $max-width;
     width: $width;
     height: $height;
-}
+} 
