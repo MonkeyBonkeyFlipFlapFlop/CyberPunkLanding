@@ -1,25 +1,23 @@
-<div class="transition-background black-white"></div>
 <section class="raffle-console">
   <div class="raffle-console__container">
     <div class="raffle-console__header">
       <div class="raffle-console__logo">
-        <img src="./img/logo/logo_raffle.jpg" alt="Лого" />
+        <picture>
+          <source srcset="<%= require('../img/logo/logo_raffle.jpg?as=webp') %>" type="image/webp">
+          <img src="<%= require('../img/logo/logo_raffle.jpg') %>" alt="Лого" />
+        </picture>
       </div>
       <h2 class="raffle-console__title">Играй и выигрывай!</h2>
     </div>
     <p class="raffle-console__description">
-      Играй в
-      <span class="raffle-console__text dedicated"><a href="https://www.cyberpunk.net/ru/ru/" target="_blank"
-          class="raffle-console__link">Cyberpunk 2077</a></span>
-      и получи возможность выиграть консоль
-      <span class="raffle-console__text dedicated"><a href="https://www.xbox.com/ru-RU/consoles/xbox-series-x"
-          target="_blank" class="raffle-console__link">Xbox Series X</a></span>
-      или Sony
-      <span class="raffle-console__text dedicated"><a href="https://www.playstation.com/ru-ua/ps5/" target="_blank"
-          class="raffle-console__link">Sony PlayStation 5!</a></span>
-      Заполни форму ниже и приложи скриншот о покупке игры. Итоги розыгрыша
-      будут подведены 1 февраля. Удачи! ;)
-      </p>
+      Играй в 
+      <span class="raffle-console__text dedicated"><a href="https://www.cyberpunk.net/ru/ru/" target="_blank" class="raffle-console__link">Cyberpunk 2077</a></span> 
+      и получи возможность выиграть консоль 
+      <span class="raffle-console__text dedicated"><a href="https://www.xbox.com/ru-RU/consoles/xbox-series-x" target="_blank" class="raffle-console__link">Xbox Series X</a></span> 
+      или Sony 
+      <span class="raffle-console__text dedicated"><a href="https://www.playstation.com/ru-ua/ps5/" target="_blank" class="raffle-console__link">Sony PlayStation 5!</a></span>
+      Заполни форму ниже и приложи скриншот о покупке игры. Итоги розыгрыша будут подведены 1 февраля. Удачи! ;)
+    </p>
     <div class="raffle-console__block">
       <form action="" class="raffle-console__form">
         <input type="text" class="raffle-console__field" placeholder="Как тебя зовут ?" />
@@ -37,10 +35,16 @@
       </form>
       <div class="raffle-console__gallery">
         <div class="raffle-console__XBOX">
-          <img src="../components/img/gallery/Xbox_SeriesX.jpg" alt="Xbox SeriesX" />
+          <picture>
+            <source srcset="<%= require('../img/gallery/Xbox_SeriesX.jpg?as=webp') %>" type="image/webp">
+            <img src="<%= require('../img/gallery/Xbox_SeriesX.jpg') %>" alt="Xbox SeriesX" />
+          </picture>
         </div>
         <div class="raffle-console__PS5">
-          <img src="../components/img/gallery/PS5.jpg" alt="PS5" />
+          <picture>
+            <source srcset="<%= require('../img/gallery/PS5.jpg?as=webp') %>" type="image/webp">
+            <img src="<%= require('../img/gallery/PS5.jpg') %>" alt="PS5" />
+          </picture>
         </div>
       </div>
     </div>

@@ -4,6 +4,10 @@
 
 .promo-header {
   background: url("../img/background/background_1.png") no-repeat center / cover;
+  background-image: image-set(
+    url("../img/background/background_1.png?as=webp") type("image/webp"),
+    url("../img/background/background_1.png") type("image/png")
+  );
   @include size(100vw, 100%, 100vh);
   @include flex-box(flex, center, stretch, row);
   padding-top: 20px;
