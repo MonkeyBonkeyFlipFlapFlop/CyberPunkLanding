@@ -1,6 +1,6 @@
 @use "../common/variables" as *;
 @use "../common/mixin" as *;
-
+@use "../common/fonts" as *;
 @use '../common/common' as *;
 @use "../promo-header/promo-header" as *;
 @use "../night-city/night-city" as *;
@@ -10,32 +10,6 @@
 @use "../footer/footer.scss" as *;
 
 @use "../common/button/button" as *;
-
-@font-face {
-  font-family: "Roboto" ;
-  src: url(../fonts/Roboto.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto" ;
-  src: url(../fonts/Roboto-Light.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto" ;
-  src: url(../fonts/Roboto-Bold.ttf) format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Archangelsk";
-  src: url("../fonts/Archangelsk.ttf") format("truetype");
-}
 
 *,
 *::before,

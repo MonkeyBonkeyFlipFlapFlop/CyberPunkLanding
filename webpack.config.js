@@ -12,11 +12,12 @@ const isProduction = process.env.NODE_ENV === "production";
 export default {
   mode: isProduction ? "production" : "development",
   entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    clean: true,
-  },
+ output: {
+  path: path.resolve(__dirname, "dist"),
+  filename: "bundle.js",
+  clean: true,
+  publicPath: "./", 
+},
   module: {
     rules: [
       {
@@ -115,7 +116,7 @@ export default {
   devServer: {
     static: "./dist",
     hot: true,
-    port: 1946,
+    port: 1000,
     open: true,
   },
 };

@@ -133,13 +133,10 @@ h6 {
     background-color: $color-accent;
     @include text($color: $color-main, $weight: 900);
     transition:
-      font-size 0.3s,
-      border 0.2s;
+      font-size 0.3s;
 
     &:hover {
-      cursor: pointer;
       font-size: 1.25rem;
-      border: 3px solid $color-border;
     }
   }
 

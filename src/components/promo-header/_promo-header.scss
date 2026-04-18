@@ -36,23 +36,21 @@
 
   &__link {
     text-decoration: none;
-
+     cursor: pointer;
     &:hover {
       .promo-header__icon {
         transform: translateY(-10px);
-        cursor: pointer;
+       
       }
     }
   }
 
   &__icon {
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
   }
 
   &__logo {
-    &:hover {
       cursor: pointer;
-    }
   }
 
   &__block {
@@ -81,10 +79,10 @@
     @include text($size: 1.5rem, $color: $color-accent, $weight: 900);
 
     &:hover {
-      cursor: pointer;
-      border: 3px solid $color-border;
-      font-size: 1.75rem;
+      transform: scale(1.05);
+      font-size: 1.55rem; 
     }
+    
   }
   &__inner {
     @include flex-box(flex, center, null, column);
@@ -93,8 +91,8 @@
 
 @media (max-width: 45rem) {
   .promo-header {
-
-      height: 48rem;
+    padding-top: 7px;
+    height: 48rem;
     &__content {
       flex-direction: column;
     }
@@ -116,5 +114,15 @@
     &__inner {
       @include flex-box($align-items: center, $flex-direction: column);
     }
+    &__button{
+      width: 15rem;
+      height: 4rem;
+      font-size: 1.25rem;
+       &:hover {
+      transform: scale(1.05);
+      font-size: 1.30rem; 
+    }
+    }
+   
   }
 }

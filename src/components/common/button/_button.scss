@@ -6,5 +6,6 @@ button{
     height: 60px;
     background-color: $color-main;
     color: $color-accent;
-    @include text()
+    @include text();
+    cursor: pointer;
 }
