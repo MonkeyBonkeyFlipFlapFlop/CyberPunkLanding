@@ -51,7 +51,7 @@ export default {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
-        generator: { // Исправлено: убрана лишняя скобка {
+        generator: { 
           filename: (pathData) => {
             const cleanPath = pathData.module.resource.split('?')[0];
             const relativePath = path.relative(
